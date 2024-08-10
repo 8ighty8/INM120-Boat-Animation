@@ -1,0 +1,126 @@
+#sun-ray1 {
+    transform-origin: center center;
+    animation: pulse 4s linear infinite;
+}
+
+#sun-ray2 {
+    transform-origin: center center;
+    animation: pulse 4s linear infinite;
+    animation-delay: 2s;
+}
+
+/* I chose to animate my sun rays so that it fades out in a steady state without too many repetitions */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Within 5s, the boat will make its full animation of bobbing up for 2.5 seconds then back down before it repeats the animation*/
+
+#boat {
+    animation: bobbing 4s infinite alternate;
+}
+@keyframes bobbing {
+    0% {
+        top: 50%;
+    }
+    50% {
+        top: 45%;
+    }
+    100% {
+        top: 48%
+    }
+    }
+
+    /* Included z-index so that the smoke can appear from behind the boat instead of infront */
+.smoke {
+    animation: Smoke 5s linear infinite;
+    z-index: 20;
+    
+}
+.smoke1 {
+    animation-delay: 1s; 
+}
+.smoke2 {
+    animation-delay: 2s 
+}
+.smoke3 {
+    animation-delay: 0s; 
+}
+    
+@keyframes Smoke {
+    0% { 
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-200px, -150px) scale(4);
+    }
+}
+/* Sea bobs up and down at a controlled rate, however the bottom of the page is exposed a bit? */
+
+@keyframes sea {
+    50%{
+        height: 42vh;
+    }
+    100%{
+        height: 40vh;
+    }
+    }
+
+ #sea {
+        animation: sea 4s infinite alternate;
+       }
+
+/* Wanted the clouds to head in one direction and fading away making it infinite */
+
+@keyframes clouds {
+    0% { 
+        opacity: 0;
+        transform: translateX(500px);
+    }
+    10% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+}
+
+.cloud {
+    animation: clouds 20s linear infinite;
+}
+
+.cloud1 {
+    animation-delay: -4s; 
+}
+.cloud2 {
+    animation-delay: -3s; 
+}
+.cloud3 {
+    animation-delay: -2s; 
+}
+.cloud4 {
+    animation-delay: -1s; 
+}
